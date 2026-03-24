@@ -53,4 +53,5 @@ npm run lint
 - reactivity
   + Vue tự động theo dõi giá trị ref được truyền vào template và cập nhật lại dom khi value của ref thay đổi
 - Computed: Giúp cho logic không bị chạy lại một cách dư thừa. Chỉ chạy lại khi các phụ thuộc của hàm đó thay đổi
+- V-if: nếu false sẽ không hiển thị trong DOM / v-show: false => vẫn hiển thị trong DOM
 ```
