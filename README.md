@@ -50,5 +50,6 @@ npm run lint
     - ràng buộc thuộc tính: v-bind (:)
   + two way binding
     - v-model
-
+- reactivity
+  + Vue tự động theo dõi giá trị ref được truyền vào template và cập nhật lại dom khi value của ref thay đổi
 ```
