@@ -1,32 +1,39 @@
 <script setup>
-import { computed, reactive, ref } from 'vue';
-const first_name = ref("Nguyen Khac")
-const last_name = ref("Minh")
+import { ref } from 'vue';
 
-const full_name = computed({
-  get() {
-    return first_name.value + ' ' + last_name.value
-  },
-
-  set(new_value) {
-    [first_name.value, last_name.value] = new_value.split(",")
-  }
-})
-
-const changeName = () => {
-  full_name.value = "Nguyen Van, A"
+const hasError = ref(true)
+const changeClass = () => {
+  hasError.value = !hasError.value
 }
 </script>
 
 <template>
-<div>
-  <h2>Fullname:: {{ full_name }}</h2>
-  <h2>Firstname:: {{ first_name }}</h2>
-  <h2>Lastname:: {{ last_name }}</h2>
+<button
+  class="button" :class="{'has-error': hasError}"
+>
+  Active
+</button>
 
-  <button @click="changeName">Change name</button>
-</div>
+<button @click="changeClass">{{hasError ? "Remove class" : "Add class"}}</button>
 </template>
 
 <style scoped>
+.button {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: rgb(80, 9, 146);
+  color: white;
+  cursor: pointer;
+  &:hover{
+    background-color:  rgb(121, 7, 227);
+  }
+}
+
+.has-error {
+  background-color: rgb(149, 4, 4);
+  &:hover{
+    background-color:  rgb(233, 8, 8);
+  }
+}
 </style>
